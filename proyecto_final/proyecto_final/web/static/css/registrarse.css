@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700;800&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+    margin: 0 !important;
+
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(167, 203, 223);
+    animation: rotarFondo 40s linear infinite;
+}
+
+@keyframes rotarFondo {
+    0% {
+        background-color: rgba(255, 249, 153);
+    }
+
+    33.33% {
+        background-color: rgba(167, 203, 223);
+    }
+
+    66.66% {
+        background-color: rgba(255, 249, 153);
+    }
+
+    100% {
+        background-color: rgba(167, 203, 223);
+    }
+}
+
+
+.imagenes {
+    display: flex;
+    background-image: url('../images/pupurri_pescao.png');
+    background-size: 800px;
+    /* background-size: cover; */
+    width: 100%;
+    height: 100vh;
+    /* height: 100vh; */
+    margin-top: -150px;
+    margin-bottom: -150px;
+
+}
+
+
+/* inicio barra superior */
+.barraSuperior {
+    position: relative;
+    background-color: #ebebeb;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 100% !important;
+    height: 100px !important;
+    /* margin-top: 100px; */
+    font-family: 'TT Commons Pro Expand', sans-serif !important;
+    font-size: 18px !important;
+}
+
+.nav-logo {
+    display: flex;
+    width: 23%;
+    height: 50px;
+    color: #322203;
+    justify-content: center;
+    text-align: center;
+    align-items: flex-end;
+    font-family: 'Times New Roman', sans-serif !important;
+    font-size: 50px;
+}
+
+.nav-logo>img {
+    width: 50px;
+    height: 50px;
+}
+
+.nav-opciones {
+    display: flex;
+    width: 38%;
+    height: 50px;
+    color: #322203;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.nav-opciones ul li {
+    display: inline;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    /* margin-left: 100PX; */
+    padding: 12px;
+}
+
+.nav-opciones .menu {
+    margin-left: 50px;
+    margin-right: 200px;
+}
+
+.nav-opciones ul li a {
+    color: #322203;
+    text-decoration: none;
+}
+
+.nav-opciones ul li a:hover {
+    color: #F9D949;
+}
+
+.nav-cuenta {
+    display: flex;
+    width: 38%;
+    height: 50px;
+    color: #322203;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    /* font-size: 30px; */
+
+}
+
+.nav-cuenta ul li {
+    display: inline;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: flex-end;
+    margin-right: 50px;
+    margin-left: 100PX;
+}
+
+.nav-cuenta ul li a {
+    color: #322203;
+    text-decoration: none;
+}
+
+.nav-cuenta ul li a:hover {
+    color: #F9D949;
+}
+
+.nav-cuenta .ayuda {
+    margin-right: 200px;
+    margin-left: 10px;
+}
+
+/* fin barra superior */
+
+/* inicio contenedor */
+
+.imagenes .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    color: #4b5459;
+    /* padding: 20px; */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 700px;
+    margin-left: 37vw;
+    margin-top: 200px;
+    margin-bottom: 190px;
+    background-color: white;
+    text-transform: uppercase;
+    color: #322203;
+    transition: .4s ease-in-out;
+    font-family: 'Bebas Neue', sans-serif !important;
+}
+
+.imagenes .form:hover {
+    transform: scale(1.05);
+}
+
+.titulo {
+    color: #322203 !important;
+    /* margin-left: 220px; */
+    font-family: 'Bebas Neue', sans-serif !important;
+    font-size: 50px;
+    padding: 0;
+    margin: 15px;
+    margin-left: 20vh;
+}
+
+.form label {
+    align-items: flex-start !important;
+    font-family: 'TT Commons Pro Expand', sans-serif !important;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.nombre>label {
+    margin-left: 55px;
+
+}
+
+.p_apellido>label {
+    margin-left: 55px;
+}
+
+.s_apellido>label {
+    margin-left: 55px;
+}
+
+.fecha_nac>label {
+    margin-left: 55px;
+}
+
+.email>label {
+    margin-left: 55px;
+}
+
+.num>label {
+    margin-left: 55px;
+}
+
+.contra>label {
+    margin-left: 55px;
+}
+
+.btn button {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 16vh;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 44vh;
+    padding: 10px;
+    margin-left: 50px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #171717;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+    border-radius: 25px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.registrarse {
+    padding: 0.5em;
+    padding-left: 2.3em;
+    padding-right: 2.3em;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #171717;
+    color: white;
+    font-size: 25px;
+    font-family: 'Bebas Neue', sans-serif !important;
+}
+
+.registrarse:hover {
+    background-color: rgb(5, 230, 91);
+    color: white;
+}
+
+/* fin contenedor */
+.footer {
+    background-color: #ebebeb;
+    color: #322203;
+    text-align: center;
+    position: bottom;
+    width: 100%;
+    height: 150px;
+    /* margin-bottom: -100px; */
+    margin-top: -150px;
+}

@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background: #EBEBEB;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+
+.logo{
+    margin-left: 30px;
+}
+
+
+.logo a {
+    text-decoration: none;
+    color: #322203;
+    text-transform: uppercase;
+    font-size: 20px;    
+}
+
+.navbar a{
+    display:  block;
+    padding: 23px 20px;
+    color: #322203;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.navbar a:hover{
+    background:#fdf1a4;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    height: 100vh !important;
+}
+
+.content{
+    background: #EBEBEB;
+    background: url(IMG/ramos-arizpe-5.jpeg) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+}
+.title{
+    margin-bottom: 40px;
+    font-size: 60px;
+    font-weight: 600;
+    text-transform:  uppercase;
+}
+
+p {
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding:  10px 40px;
+    border: 2px solid #ebebeb;
+    color: #040404;
+    text-decoration: none;
+    background: #EBEBEB;
+}
+
+.btn:hover{
+    background: none;
+    font-size: 60px;
+    font-weight: 600;
+    text-transform:  uppercase;
+    color: #EBEBEB;
+
+}
+
+.btn-home{
+    display: flex;
+}
+
+.btn-home a{
+    margin: 0 10px;
+}
+
+.content {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bur{
+    padding: 30px;
+    background: #ebebeb;
+    background: url(IMG/Basura-W-Radio.jpg) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+}
+.sau {
+    padding: 30px;
+    background: #ebebeb;
+    background: url(IMG/bachessocavones-faa71e681b89b5f4157e699ade5c29ce-1200x0.jpg) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+}
+
+.about {
+    background: #EBEBEB;
+    background: url(IMG/R\ \(2\).jpg) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+}
+

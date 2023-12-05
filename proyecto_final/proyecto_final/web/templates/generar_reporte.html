@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '\css\generar_reporte.css' %}">
+    <!-- <link rel="stylesheet" href="/css/generar_reporte.css"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="barraSuperior">
+        <div class="nav-opciones">
+            <ul class="nav-opc">
+                <li class="reportes">
+                    <a href="http://127.0.0.1:8000/home/">INICIO</a>
+                </li>
+                <li class="servicios">
+                    <a href="http://127.0.0.1:8000/tipos-incidencia/">TIPOS DE INCIDENCIA</a>
+                </li>
+                <li class="ayuda">
+                    <a href="http://127.0.0.1:8000/ayuda/">AYUDA</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-logo">
+            <label for="titulo">BCS</label>
+        </div>
+        <div class="nav-cuenta">
+            <ul>
+                <li class="usuario">
+                    <a href="http://127.0.0.1:8000/ver-usuario/">USUARIO</a>
+                </li>
+                <li class="logout">
+                    <a href="/salir">LOG OUT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="contenedor">
+        <div class="formulario">
+            <div class="imagenes">
+                <form method="post" class="generar-reporte">{% csrf_token %}
+                    <label for="incidencia">Tipo de Incidencia:</label>
+                    <select id="incidencia" name="incidencia" required>
+                        <option value="">-- Seleccionar --</option>
+                        <option value="CIBA1">Bache</option>
+                        <option value="CIPB1">Basura en via publica</option>
+                        <option value="CIFA1">Fuga de alcantarilla</option>
+                        <option value="CIPA">Problemas de alumbrado</option>
+                        <!-- Agrega más opciones según sea necesario -->
+                    </select>
+
+                    <label for="calle_principal">Calle principal:</label>
+                    <input type="text" id="calle_principal" name="calle_principal" required>
+
+                    <label for="calle_secundaria">Calle secundaria:</label>
+                    <input type="text" id="calle_secundaria" name="calle_secundaria" >
+
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" rows="4" ></textarea>
+
+                    <button type="submit">Generar Reporte</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div>
+        <footer class="footer">
+            <!-- <p>&copy; 2023 Mi Empresa. Todos los derechos reservados.</p>
+            <p>Contacto: info@miempresa.com</p> -->
+        </footer>
+    </div>
+</body>
+
+</html>

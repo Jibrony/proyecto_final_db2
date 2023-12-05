@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '\css\mostrar_reporte.css'%}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="barraSuperior">
+            <div class="nav-opciones">
+                <ul class="nav-opc">
+                    <li class="reportes">
+                        <a href="http://127.0.0.1:8000/generar-reporte/">REPORTES</a>
+                    </li>
+                    <li class="servicios">
+                        <a href="http://127.0.0.1:8000/tipos-incidencia/">TIPOS DE INCIDENCIA</a>
+                    </li>
+                    <li class="ayuda">
+                        <a href="http://127.0.0.1:8000/ayuda/">AYUDA</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-logo">
+                <label for="titulo">BCS</label>
+            </div>
+            <div class="nav-cuenta">
+                <ul>
+                    <li class="usuario">
+                        <a href="http://127.0.0.1:8000/ver-usuario/">USUARIO</a>
+                    </li>
+                    <li class="logout">
+                        <a href="/salir">LOG OUT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>hola mundo</div>
+        {% for i in lista_de_incidencias %}
+        <div class="tipo_problema">{{i.nombre_incidencia}}</div>
+        <div class="ubicacion">{{i.calle_principal}}
+            {{i.calle_secundaria}}
+        </div>
+        <div class="descripcion">{{i.descripcion}}</div>
+        <div class="status">{{i.estatus}}</div>
+        {%endfor%}
+    </div>
+</body>
+
+</html>

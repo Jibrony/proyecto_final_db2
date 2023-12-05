@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andorei's Store</title>
+    <link rel="stylesheet" href="{% static '\css\reportes.css' %}">
+</head>
+
+<body>
+    <div class="barraSuperior">
+        <div class="nav-opciones">
+            <ul class="nav-opc">
+                <li class="reportes">
+                    <a href="http://127.0.0.1:8000/generar-reporte/">REPORTES</a>
+                </li>
+                <li class="servicios">
+                    <a href="http://127.0.0.1:8000/ayuda/">TIPOS DE INCIDENCIA</a>
+                </li>
+                <li class="ayuda">
+                    <a href="http://127.0.0.1:8000/ayuda/">AYUDA</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-logo">
+            <label for="titulo">BCS</label>
+        </div>
+        <div class="nav-cuenta">
+            <ul>
+                <li class="usuario">
+                    <a href="http://127.0.0.1:8000/ver-usuario/">USUARIO</a>
+                </li>
+                <li class="logout">
+                    <a href="/salir">LOG OUT</a>
+                </li>
+            </ul>
+        </div>
+        <div class="contenedor">
+            <form method="post" class="generar-reporte">{% csrf_token %}
+
+                <label for="incidencia">Tipo de Incidencia:</label>
+                <select id="incidencia" name="incidencia" required>
+                    <option value="">-- Seleccionar --</option>
+                    <option value="CIBA1">Bache</option>
+                    <option value="CIBVP">Basura en via publica</option>
+                    <option value="CIFA1">Fuga de alcantarilla</option>
+                    <option value="CIPA">Problemas de alumbrado</option>
+                    <!-- Agrega más opciones según sea necesario -->
+                </select>
+                <label for="titulo">Calle Principal:</label>
+                <input type="text" id="calle_principal" name="calle_principal" required>
+                <label for="titulo">Calle Principal:</label>
+                <input type="text" id="calle_secundaria" name="calle_secundaria" required>
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+                <button type="submit">Generar Reporte</button>
+            </form>
+
+        </div>
+        <div>
+            <footer class="footer">
+                <p>&copy; 2023 Mi Empresa. Todos los derechos reservados.</p>
+                <p>Contacto: info@miempresa.com</p>
+            </footer>
+        </div>
+</body>
+
+</html>

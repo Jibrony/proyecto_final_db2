@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %} 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baches BCS | Sign Up</title>
+    <link rel="stylesheet" href="{% static '\css\registrarse.css' %}">
+</head>
+
+<body>
+    <div class="pagina">
+        <div class="barraSuperior">
+            <div class="nav-opciones">
+                <ul class="nav-opc">
+                    <li class="reportes">
+                        <a href="http://127.0.0.1:8000">REGRESAR</a>
+                    </li>
+                    <!-- <li class="reportes">
+                        <a href="">REPORTES</a>
+                    </li>
+                     -->
+                </ul>
+            </div>
+            <div class="nav-logo">
+                <label for="titulo">BCS</label>
+            </div>
+            <div class="nav-cuenta">
+                <ul>
+                    <li class="nosotros">
+                        <a href="">SOBRE NOSOTROS</a>
+                    </li>
+                    <li class="ayuda">
+                        <a href="">AYUDA</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="contenedor">
+            <div class="formulario">
+                <div class="imagenes">
+                    <form class="form" method="POST">{% csrf_token %}
+                        <p class="titulo">REGISTRO</p>
+                        <div class="nombre">
+                            <label for="nombre_usuario">Nombre(s):</label><br>
+                            <input type="text" id="nombre" name="nombre" required><br>
+                        </div>
+                        <div class="p_apellido">
+                            <label for="apellido1">Primer apellido:</label><br>
+                            <input type="text" id="apellido1" name="apellido1" required><br>
+                        </div>
+                        <div class="s_apellido">
+                            <label for="apellido2">Segundo apellido:</label><br>
+                            <input type="text" id="apellido2" name="apellido2"><br>
+                        </div>
+                        <div class="fecha_nac">
+                            <label for="fechaNacimiento">Fecha de nacimiento:</label><br>
+                            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br>
+                        </div>
+                        <div class="email">
+                            <label for="correo">Correo electrónico:</label><br>
+                            <input type="email" id="correo" name="correo" required><br>
+                        </div>
+                        <div class="contra">
+                            <label for="contraseña">Contraseña:</label><br>
+                            <input type="password" id="contraseña" name="contraseña"><br>
+                        </div>
+                        <div class="num">
+                            <label for="telefono">Número de teléfono:</label><br>
+                            <input type="tel" id="telefono" name="telefono"><br>
+                        </div>
+                        <div class="btn">
+                            <button type="submit" class="registrarse">REGISTRARSE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div>
+            <footer class="footer">
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

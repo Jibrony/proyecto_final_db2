@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- {% load static%} -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static '/css/main.css' %}">
+  <!-- <link rel="stylesheet" href="/css/index_p.css"> -->
+  <script defer src="/js/index.js"></script>
+  <title>Inicio</title>
+</head>
+
+<body>
+  <div class="barraSuperior">
+    {% if rol == 'usuario' %}
+    <div class="nav-opciones">
+      <ul class="nav-opc">
+        <li class="reportes">
+          <a href="http://127.0.0.1:8000/generar-reporte/">REPORTES</a>
+        </li>
+        <li class="servicios">
+          <a href="http://127.0.0.1:8000/tipos-incidencia/">TIPOS DE INCIDENCIA</a>
+        </li>
+        <li class="ayuda">
+          <a href="http://127.0.0.1:8000/ayuda/">AYUDA</a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-logo">
+      <label for="titulo">BCS</label>
+    </div>
+    <div class="nav-cuenta">
+      <ul>
+        <li class="usuario">
+          <a href="http://127.0.0.1:8000/ver-usuario/">USUARIO</a>
+        </li>
+        <li class="logout">
+          <a href="/salir">LOG OUT</a>
+        </li>
+      </ul>
+    </div>
+    <div id="hamburguesa" class="hamburguesa" onclick="toggleMenu()">
+      <div class="barra"></div>
+      <div class="barra"></div>
+      <div class="barra"></div>
+    </div>
+    <!-- Menú desplegable -->
+    <div id="menuDesplegable" class="menuDesplegable">
+    </div>
+    {%endif%}
+    {% if rol == 'admin' %}
+    <div class="nav-opciones">
+      <ul class="nav-opc">
+        <li class="servicios">
+          <a href="http://127.0.0.1:8000/mostrar-reportes-admin/">MOSTRAR REPORTES</a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-logo">
+      <label for="titulo">BCS</label>
+    </div>
+    <div class="nav-cuenta">
+      <ul>
+        <li class="usuario">
+          <a href="http://127.0.0.1:8000/ver-usuario/">USUARIO</a>
+        </li>
+        <li class="logout">
+          <a href="/salir">LOG OUT</a>
+        </li>
+      </ul>
+    </div>
+
+    {%endif%}
+    <div class="contenedor">
+      <div class="laterales">
+        <div class="laterales-img">
+          <div class="centro">
+            <div class="titulo" id="titulo">
+
+              <!-- <span>Soy</span> -->
+              <h1>EQUIPO DE DESARROLLO</h1>
+              <!-- <div class="butons">
+                                    <a href="#" class="btn-1">Información</a>
+                                </div> -->
+
+            </div>
+            <section class="about" id="about-beto">
+              <div class="about-img">
+                <img src="{% static '../static/images/beto.png' %}" alt="">
+              </div>
+              <div class="about-txt">
+                <h2>CARBALLO CABALLERO JESÚS ALBERTO</h2>
+                <p>
+                  Lider equipo<br><br>
+                  - Full Stack<br>
+                  - Front-end: HTML, CSS, JS<br>
+                  - Back-end: Python, Django<br>
+                  - Base de datos: MySQL<br>
+                </p>
+                <div class="butons">
+                  <a href="#" class="btn-1">Portafolio</a>
+                  <a href="#" class="btn-1">Tecnologías</a>
+                </div>
+              </div>
+            </section>
+            <section class="about" id="about-andy">
+              <div class="about-img">
+                <img src="{% static '../static/images/andy.png' %}" alt="">
+              </div>
+              <div class="about-txt">
+                <h2>GUTIERREZ ARCE ANDREY JULIAN</h2>
+                <p>
+                  Sub-lider equipo<br><br>
+                  - Full Stack<br>
+                  - Front-end: HTML, CSS, JS<br>
+                  - Back-end: Python, Django<br>
+                  - Base de datos: MySQL<br>
+                </p>
+                <div class="butons">
+                  <a href="#" class="btn-1">Portafolio</a>
+                  <a href="#" class="btn-1">Tecnologías</a>
+                </div>
+              </div>
+            </section>
+            <section class="about" id="about-nedel">
+              <div class="about-img">
+                <img src="{% static '../static/images/nedel.png' %}" alt="">
+              </div>
+              <div class="about-txt">
+                <h2>AYÓN CAMACHO NEDEL ENRIQUE</h2>
+                <p>
+                  Front-end Equipo<br><br>
+                  - Front-end: HTML, CSS, JS<br>
+                </p>
+                <div class="butons">
+                  <a href="#" class="btn-1">Portafolio</a>
+                  <a href="#" class="btn-1">Tecnologías</a>
+                </div>
+              </div>
+            </section>
+            <section class="about" id="about-zuly">
+              <div class="about-img">
+                <img src="{% static '../static/images/zuly.png' %}" alt="">
+              </div>
+              <div class="about-txt">
+                <h2>IGNACIO SANCHÉZ ZULIDANY</h2>
+                <p>
+                  Diseñadora Equipo<br><br>
+                  - Front-end: HTML, CSS, JS<br>
+                  - Diseño: Figma, Canva<br>
+                </p>
+                <div class="butons">
+                  <a href="#" class="btn-1">Portafolio</a>
+                  <a href="#" class="btn-1">Tecnologías</a>
+                </div>
+              </div>
+            </section>
+            <section class="skills">
+              <h2>HERRAMIENTAS Y CONOCIMIENTOS</h2>
+              <div class="skills-content">
+                <img src="{% static '../static/images/django_logo.png' %}" alt="" class="django">
+                <img src="{% static '../static/images/l1.png' %}" alt="">
+                <img src="{% static '../static/images/l2.png' %}" alt="">
+                <img src="{% static '../static/images/l3.png' %}" alt="">
+                <img src="{% static '../static/images/l6.png' %}" alt="">
+                <img src="{% static '../static/images/l7.png' %}" alt="">
+              </div>
+            </section>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div>
+      <footer class="footer">
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>

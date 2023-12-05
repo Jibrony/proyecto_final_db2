@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    {%load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '\css\Style.css' %}">
+    <title>Pagina web</title>
+</head>
+<body>
+    <div class="barraSuperior">
+        <div class="nav-opciones">
+            <ul class="nav-opc">
+                <li class="reportes">
+                    <a href="http://127.0.0.1:8000/generar-reporte/">REPORTES</a>
+                </li>
+                <li class="servicios">
+                    <a href="http://127.0.0.1:8000/tipos-incidencia/">TIPOS DE INCIDENCIA</a>
+                </li>
+                <li class="ayuda">
+                    <a href="http://127.0.0.1:8000/ayuda/">AYUDA</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-logo">
+            <label for="titulo">BCS</label>
+        </div>
+        <div class="nav-cuenta">
+            <ul>
+                <li class="usuario">
+                    <a href="http://127.0.0.1:8000/ver-usuario/">USUARIO</a>
+                </li>
+                <li class="logout">
+                    <a href="/salir">LOG OUT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="content">
+        <h2 class="title"></h2>
+            <a href="/mostrar-reportes?tipo=CIPA" class="btn">ALUMBRADO</a>
+    </section>
+
+
+    <section class="content sau">
+        <h2 class="title"></h2>
+        
+            <a href="/mostrar-reportes?tipo=CIBA1" class="btn">BACHES</a>
+    </section>
+
+    <section class="content about">
+            <h2 class="title"></h2>
+            <a href="/mostrar-reportes?tipo=CIFA1" class="btn">ZANJAS</a>
+    </section>
+
+
+</body>
+</html>

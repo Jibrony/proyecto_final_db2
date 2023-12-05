@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '\css\StyleDuda.css'%}">
+    <title>DUDA</title>
+</head>
+
+<body>
+    <!-- <form action="/ingresar-dudas/" method="post" class="ingresar">{%csrf_token%}
+            <p>Nombre completo:</p>
+            <input type="text" class="field"  name="nombre" required> <br/>
+            <p>Ingrese su duda</p>
+            <input type="text" class="field" name="dudas" required> <br/>
+            <p class="center-content">
+                <button type="sumbit" class="btn btn-acept" >Enviar</button>
+            </p>
+        </form> -->
+
+    <body>
+        <div class="pagina">
+            <div class="barraSuperior">
+                <div class="nav-opciones">
+                    <ul class="nav-opc">
+                        <li class="reportes">
+                            <a href="http://127.0.0.1:8000/home/">INICIO</a>
+                        </li>
+                        <li class="reportes">
+                            <a href="http://127.0.0.1:8000/generar-reporte/">REPORTES</a>
+                        </li>
+                        <li class="servicios">
+                            <a href="http://127.0.0.1:8000/tipos-incidencia/">TIPOS DE INCIDENCIA</a>
+                        </li>
+                        <li class="ayuda">
+                            <a href="http://127.0.0.1:8000/ayuda/">AYUDA</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-logo">
+                    <label for="titulo">BCS</label>
+                </div>
+                <div class="nav-cuenta">
+                    <ul>
+                        <li class="usuario">
+                            <a href="http://127.0.0.1:8000/ver-usuario/">USUARIO</a>
+                        </li>
+                        <li class="logout">
+                            <a href="/salir">LOG OUT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contenedor">
+                <form class="duda" method="POST" action="/ingresar-dudas/">{% csrf_token %}
+                    <p>Nombre completo:</p>
+                    <input type="text" class="field" name="nombre"> <br />
+
+                    <p>Ingrese su duda</p>
+                    <input type="text" class="field" name="dudas"> <br />
+
+                    <p class="center-content"><input type="submit" class="btn btn-acept" value="Enviar"></p>
+                </form>
+            </div>
+        </div>
+    </body>
+
+</html>
+</body>
+
+</html>

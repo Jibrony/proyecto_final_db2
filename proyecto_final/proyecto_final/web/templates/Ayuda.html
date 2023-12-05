@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/ayuda.css' %}">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="barraSuperior">
+        <div class="nav-opciones">
+            <ul class="nav-opc">
+                <li class="reportes">
+                    <a href="http://127.0.0.1:8000/home/">INICIO</a>
+                </li>
+                <li class="servicios">
+                    <a href="http://127.0.0.1:8000/generar-reporte/">REPORTE</a>
+                </li>
+                <li class="ayuda">
+                    <a href="http://127.0.0.1:8000/tipos-incidencia/">TIPOS DE INCIDENCIA</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-logo">
+            <label for="titulo">BCS</label>
+        </div>
+        <div class="nav-cuenta">
+            <ul>
+                <li class="usuario">
+                    <a href="http://127.0.0.1:8000/ver-usuario/">USUARIO</a>
+                </li>
+                <li class="logout">
+                    <a href="/salir">LOG OUT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="contenedor">
+            <div class="opc-1">
+                <img src="../static/images/pj_pregunta.png" alt="" class="img1">
+                <button type="button" id="ayuda">Realizar tu Duda</button>
+
+            </div>
+            <div class="opc-2">
+                <img src="../static/images/comunidad_pregunta.png" alt="" class="img2">
+                <button type="button" id="preguntas"">Preguntas Frecuentes</button>
+
+            </div>
+    </div>
+
+
+
+    <script src="{% static '\js\ayuda.js' %}"></script>
+</body>
+
+</html>

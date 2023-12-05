@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '\css\mostrar_tablas_admin.css'%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
+    <title>REPORTES BASURA</title>
+</head>
+
+<body>
+    <div class="barraSuperior">
+        <div class="nav-opciones">
+            <ul class="nav-opc">
+                <li class="ayuda">
+                    <a href="http://127.0.0.1:8000/home/">INICIO</a>
+                </li>
+                <li class="servicios">
+                    <a href="http://127.0.0.1:8000/mostrar-reportes-admin/">MOSTAR REPORTES</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-logo">
+            <label for="titulo">BCS</label>
+        </div>
+        <div class="nav-cuenta">
+            <ul>
+                <li class="usuario">
+                    <a href="http://127.0.0.1:8000/ver-usuario/">USUARIO</a>
+                </li>
+                <li class="logout">
+                    <a href="/salir">LOG OUT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="main-container">
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th>Clave</th>
+                    <th>Descripción</th>
+                    <th>Ubicación</th>
+                    <th>Estatus de de atención</th>
+                    <th>Fecha de Reporte</th>
+                    <th>Ver Reporte</th>
+                    <th>Editar Reporte</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in lista_de_incidencias %}
+                <tr>
+                    <td class="tipo_problema">{{i.nombre_incidencia}}</td>
+                    <td class="descripcion">{{i.descripcion}}</td>
+                    <td class="ubicacion">{{i.calle_principal}} /
+                        {{i.calle_secundaria}}
+                    </td>
+                    <td class="status">{{i.estatus}}</td>
+                    <td class="fecha">{{i.fecha_de_reporte}}</td>
+                    <td><button type="button" onclick="verReporte('{{i.id_reporte}}')" class="ver-reporte">Ver
+                            Reporte</button></td>
+                    <td><button type="button" onclick="editarReporte('{{i.id_reporte}}')" class="editar-reporte">Editar
+                            Reporte</button></td>
+                </tr>
+                {%endfor%}
+
+            </tbody>
+        </table>
+
+    </div>
+    <!-- <a href="#" id="mySizeChart">Open Modal</a> -->
+
+    <div id="mySizeChartModal" class="ebcf_modal">
+        <div class="ebcf_modal-content">
+            <span class="ebcf_close">&times;</span>
+            <h1>INFORMACION DEL REPORTE</h1>
+            <span class="subtitulos">Id del reporte: </span><span class="resultados" id="Id_reporte"></span><br><br>
+            <span class="subtitulos">Estatus: </span><span  class="resultados" name="estatus" id="estatus"></span><br><br>
+            <span class="subtitulos">Nombre de la incidencia: </span><span  class="resultados" id="incidencia"></span><br><br>
+            <span class="subtitulos">Calle Principal: </span><span class="resultados" id="calle_principal"></span><br><br>
+            <span class="subtitulos">Calle Secundaria: </span><span class="resultados" id="calle_secundaria"></span><br><br>
+            <span class="subtitulos">Fecha del Reporte: </span><span class="resultados" id="fecha_de_reporte"></span><br><br>
+            <span class="subtitulos">Descripcion: </span><span class="resultados"  type="text" id="descripcionInfo" value="" readonly></span>
+        </div>
+    </div>
+
+    <div id="mySizeChartModal2" class="ebcf_modal">
+        <form action="/updatea-reporte/" method="post"> {% csrf_token %}
+            <div class="ebcf_modal-content">
+                <span class="ebcf_close">&times;</span>
+                <h1>INFORMACION DEL REPORTE</h1>
+                <span>Id del reporte: </span><span id="Id_reporte2"></span><br><br>
+                <span>Estatus: </span>
+                <select input name="estatus" id="estatus2">
+                    <option value="Enviado">Enviado</option>
+                    <option value="En Proceso">En Proceso</option>
+                    <option value="Terminado">Terminado</option>
+                </select><br><br>
+                <span>Nombre de la incidencia: </span><span id="incidencia2"></span><br><br>
+                <span>Calle Principal: </span><span id="calle_principal2"></span><br><br>
+                <span>Calle Secundaria: </span><span id="calle_secundaria2"></span><br><br>
+                <span>Fecha del Reporte: </span><span id="fecha_de_reporte2"></span><br><br>
+                <span>Descripcion: </span><input name="descripcion" type="text" id="descripcionInfo2" value=""><br><br>
+                <input type="text" hidden id="idReporte" value="" name="idReporte">
+                <button class="botones">ACTUALIZAR</button>
+    </div>
+
+    </form>
+
+    </div>
+
+    <script src="{% static '\js\tabla.js'%}"></script>
+</body>
+
+</html>

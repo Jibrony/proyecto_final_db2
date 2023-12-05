@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{% static '/css/diseno.css' %}"> -->
+    <link rel="stylesheet" href="{%static '/css/diseno.css'%}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="pagina">
+        {% if rol == 'usuario'%}
+        <div class="barraSuperior">
+            <div class="nav-opciones">
+                <ul class="nav-opc">
+                    <li class="reportes">
+                        <a href="http://127.0.0.1:8000/home/">INICIO</a>
+                    </li>
+                    <li class="reportes">
+                        <a href="http://127.0.0.1:8000/generar-reporte/">REPORTES</a>
+                    </li>
+                    <li class="servicios">
+                        <a href="http://127.0.0.1:8000/tipos-incidencia/">TIPOS DE INCIDENCIA</a>
+                    </li>
+                    <li class="ayuda">
+                        <a href="http://127.0.0.1:8000/ayuda/">AYUDA</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-logo">
+                <label for="titulo">BCS</label>
+            </div>
+            <div class="nav-cuenta">
+                <ul>
+                    <li class="usuario">
+                        <a href="http://127.0.0.1:8000/ver-usuario/">USUARIO</a>
+                    </li>
+                    <li class="logout">
+                        <a href="/salir">LOG OUT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {%endif%}
+        {% if rol == 'admin'%}
+        <div class="barraSuperior">
+            <div class="nav-opciones">
+                <ul class="nav-opc">
+                    <li class="ayuda">
+                        <a href="http://127.0.0.1:8000/home/">INICIO</a>
+                    </li>
+                    <li class="servicios">
+                        <a href="http://127.0.0.1:8000/mostrar-reportes-admin/">MOSTAR REPORTES</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-logo">
+                <label for="titulo">BCS</label>
+            </div>
+            <div class="nav-cuenta">
+                <ul>
+                    <li class="usuario">
+                        <a href="http://127.0.0.1:8000/ver-usuario/">USUARIO</a>
+                    </li>
+                    <li class="logout">
+                        <a href="/salir">LOG OUT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {%endif%}
+        <section class="seccion-perfil-usuario">
+            <div class="perfil-usuario-header">
+                <div class="perfil-usuario-portada">
+                    <div class="perfil-usuario-avatar">
+                        <img src="{% static '/images/Usuario.png' %}" img-avatar">
+                        <button type="button" class="boton-avatar">
+                            <i class="far fa-image"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bio-contenedor">
+                <div class="perfil-usuario-body">
+                    {% for i in lista_usuario %}
+                    <div class="perfil-usuario-bio">
+                        <h3 class="titulo">Nombre del Usuario:</h3>
+                        <p class="texto"> {{i.id_usuario.nombre_usuario}}</p>
+                        <p class="texto">{{i.id_usuario.primer_apellido}}</p>
+                        {% if i.id_usuario.segundo_apellido == null%}
+                        <p class="texto"></p>
+                        {% else %}
+                        <p class="texto">{{i.id_usuario.segundo_apellido}}</p>
+                        {% endif %}
+                    </div>
+                    <div class="perfil-usuario-footer">
+                        <ul class="lista-datos">
+                            <li><i class="icono fas fa-map-signs"></i> Correo electronico de usuario:
+                                {{i.id_usuario.correo_electronico}}</li>
+                            <li><i class="icono fas fa-phone-alt"></i> Numero de telefono:
+                                {{i.id_usuario.numero_telefono}}</li>
+                            <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: {{i.id_usuario.fecha_nac}}
+                            </li>
+                        </ul>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
